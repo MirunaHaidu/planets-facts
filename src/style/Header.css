@@ -1,0 +1,89 @@
+@import url('../index.css');
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+}
+
+.logo {
+    font-size: 2.5rem;
+    letter-spacing: -0.09rem;
+    font-weight: 400;
+    font-family: var(--ff-antonio);
+}
+
+
+.planets-list {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+}
+
+.planet-name-list {
+    text-transform: uppercase;
+    font-family: var(--ff-spartan);
+    opacity: 0.75;
+    font-size: 0.9rem;
+    letter-spacing: 0.06rem;
+    cursor: pointer;
+    position: relative;
+    padding: 2rem 0;
+
+    &:hover,
+    &:active {
+        opacity: 1;
+    }
+
+}
+
+.planet-name-list::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s ease;
+}
+
+.planet-name-list:hover::before {
+    width: 100%
+}
+
+.planets-list li:nth-of-type(1)::before {
+    background: var(--mercury);
+}
+
+.planets-list li:nth-of-type(2)::before {
+    background: var(--venus);
+}
+
+.planets-list li:nth-of-type(3)::before {
+    background: var(--earth);
+}
+
+.planets-list li:nth-of-type(4)::before {
+    background: var(--mars);
+}
+
+.planets-list li:nth-of-type(5)::before {
+    background: var(--jupiter);
+}
+
+.planets-list li:nth-of-type(6)::before {
+    background: var(--saturn);
+}
+
+.planets-list li:nth-of-type(7)::before {
+    background: var(--uranus);
+}
+
+.planets-list li:nth-of-type(8)::before {
+    background: var(--neptune);
+}

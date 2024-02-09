@@ -7,7 +7,7 @@
 }
 
 :root{
-  --ff-spartan: 'Spartan', sans-serif;
+  --ff-spartan: 'League Spartan', sans-serif;
   --ff-antonio: 'Antonio', sans-serif;
 
   --mercury: hsla(194, 48%, 50%, 1);
@@ -21,6 +21,11 @@
 }
 
 body{
-  font-family: var(--ff-spartan);
+  font-family: 'Spartan', sans-serif;
   background: center / cover no-repeat url('/background-stars.svg') hsla(240, 67%, 8%, 1);
+  color: hsla(0, 0%, 100%, 1);
+}
+
+ul {
+  list-style: none;
 }
