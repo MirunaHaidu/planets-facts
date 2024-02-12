@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className='app-container'>
-        <Header planets={data} handleClick={handleClick}/>
+        <Header planets={data} selectedPlanet={selectedPlanet} handleClick={handleClick}/>
         {selectedPlanet && <Planet planet={selectedPlanet} />}
     </div>
   )

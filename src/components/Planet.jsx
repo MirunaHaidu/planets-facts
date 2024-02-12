@@ -28,16 +28,26 @@ const Planet = ({ planet }) => {
         <>
             <div className="planet-container">
                 <div className="planet-image">
-                    <img src={getImageSource()} alt={`Planet ${planet.name}`} />
+                    {selectedTab === 'geology' ? (
+                        <>
+                            <img className='planet-overview-image' src={planet.images.planet} alt={`Planet ${planet.name}`} />
+                            <img className='planet-geology-image' src={planet.images.geology} alt={`Planet ${planet.name}`} />
+                        </>
+                    ) : (
+                        <img src={getImageSource()} alt={`Planet ${planet.name}`} />
+                    )}
                 </div>
                 <div className="planet-details">
                     <h2>{planet.name}</h2>
                     <p>{planet[selectedTab].content}</p>
                     <div className='source'>
-                        Source: 
+                        Source:
                         <a href={planet[selectedTab].source} target="_blank" rel="noopener noreferrer">Wikipedia</a>
+                        <span className="material-symbols-outlined">
+                            open_in_new
+                        </span>
                     </div>
-                    
+
                     <div className="tab-buttons">
                         <button className={selectedTab === 'overview' ? 'active' : ''} onClick={() => handleTabChange('overview')}> 01&nbsp;&nbsp;&nbsp;OVERVIEW</button>
                         <button className={selectedTab === 'structure' ? 'active' : ''} onClick={() => handleTabChange('structure')}>02&nbsp;&nbsp;&nbsp;INTERNAL STRUCTURE</button>
