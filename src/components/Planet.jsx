@@ -1,11 +1,9 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import React from 'react';
 import '../style/Planet.css'
 
 const Planet = ({ planet }) => {
     const [selectedTab, setSelectedTab] = useState('overview')
-
-
 
     const handleTabChange = (tab) => {
         setSelectedTab(tab)
@@ -49,9 +47,24 @@ const Planet = ({ planet }) => {
                     </div>
 
                     <div className="tab-buttons">
-                        <button className={selectedTab === 'overview' ? 'active' : ''} onClick={() => handleTabChange('overview')}> 01&nbsp;&nbsp;&nbsp;OVERVIEW</button>
-                        <button className={selectedTab === 'structure' ? 'active' : ''} onClick={() => handleTabChange('structure')}>02&nbsp;&nbsp;&nbsp;INTERNAL STRUCTURE</button>
-                        <button className={selectedTab === 'geology' ? 'active' : ''} onClick={() => handleTabChange('geology')}>03&nbsp;&nbsp;&nbsp;SURFACE GEOLOGY</button>
+                        <button
+                            className={`tab-button ${selectedTab === 'overview' ? 'active' : ''} planet-${planet.name.toLowerCase()}`}
+                            onClick={() => handleTabChange('overview')}
+                        >
+                            01&nbsp;&nbsp;&nbsp;OVERVIEW
+                        </button>
+                        <button
+                            className={`tab-button ${selectedTab === 'structure' ? 'active' : ''} planet-${planet.name.toLowerCase()}`}
+                            onClick={() => handleTabChange('structure')}
+                        >
+                            02&nbsp;&nbsp;&nbsp;INTERNAL STRUCTURE
+                        </button>
+                        <button
+                            className={`tab-button ${selectedTab === 'geology' ? 'active' : ''} planet-${planet.name.toLowerCase()}`}
+                            onClick={() => handleTabChange('geology')}
+                        >
+                            03&nbsp;&nbsp;&nbsp;SURFACE GEOLOGY
+                        </button>
                     </div>
                 </div>
             </div>

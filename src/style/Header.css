@@ -52,10 +52,7 @@ header {
     transition: 0.5s ease;
 }
 
-.planet-name-list:active::before,
-.planet-name-list.active::before { /* Adaugă o clasă suplimentară "active" */
-    width: 100%;
-}
+
 
 .planet-name-list:hover::before {
     width: 100%
