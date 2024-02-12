@@ -8,6 +8,7 @@
     margin: 4rem 10rem;
     width: 90%;
     margin: 0.5rem;
+    
 }
 
 .planet-image {
@@ -18,6 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 .planet-geology-image {
@@ -40,13 +42,16 @@
 
 
 
-
 .planet-details {
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
     width: 50%;
+    opacity: 1;
+    
 }
+
+
 
 .planet-details h2 {
     font-family: var(--ff-antonio);
@@ -61,6 +66,7 @@
     margin-top: 1rem;
     line-height: 1.5rem;
     min-height: 150px;
+    
 }
 
 .source {
@@ -91,7 +97,7 @@
 }
 
 .tab-buttons button {
-    position: relative; 
+    position: relative;
     padding: 1em 2em;
     text-align: left;
     border: 1px solid hsla(0, 0%, 100%, 0.2);
@@ -105,6 +111,7 @@
     transition: 0.4s;
     font-family: var(--ff-spartan);
     overflow: hidden;
+
 }
 
 .tab-buttons button:hover {
@@ -114,66 +121,77 @@
 .tab-buttons button:active {
     position: relative;
     overflow: hidden;
-    
+
 }
 
 .tab-buttons button.active::before,
 .tab-buttons button.active::after {
     content: '';
     position: absolute;
-    width: 200%;
-    height: 300%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    top: -160%;
+    left: 90%;
+    height: 1000%;
+    transform: translate(-50%, -76%);
+    
+    
 }
 
 .tab-buttons button.active::before {
-    border-radius: 50%;
+    border-radius: 41%;
     background: hsla(240, 67%, 8%, 1);
-    animation: animate 11s linear infinite;
+    animation: animate 15s linear infinite;
 }
 
 .tab-buttons button.active::after {
-    border-radius: 50%;
+    border-radius: 41%;
     background: hsla(240, 67%, 8%, 0.5);
-    animation: animate 11s linear infinite;
+    animation: animate 20s linear infinite;
 }
 
 @keyframes animate {
     from {
-        transform: translate(-50%, -76%) rotate(0deg);
+      transform: translate(-50%, -76%) rotate(0deg);
     }
   
     to {
-        transform: translate(-50%, -76%) rotate(360deg);
+      transform: translate(-50%, -76%) rotate(360deg);
     }
-}
+  }
 
 .tab-buttons button.active.planet-mercury {
     background: var(--mercury);
 }
+
 .tab-buttons button.active.planet-venus {
     background: var(--venus);
 }
+
 .tab-buttons button.active.planet-earth {
     background: var(--earth);
 }
+
 .tab-buttons button.active.planet-mars {
     background: var(--mars);
 }
+
 .tab-buttons button.active.planet-jupiter {
     background: var(--jupiter);
 }
+
 .tab-buttons button.active.planet-saturn {
     background: var(--saturn);
 }
+
 .tab-buttons button.active.planet-uranus {
     background: var(--uranus);
 }
+
 .tab-buttons button.active.planet-neptune {
     background: var(--neptune);
 }
+
+
 
 
 
@@ -213,3 +231,5 @@
     line-height: 3.2rem;
     letter-spacing: 0.05rem;
 }
+
+
