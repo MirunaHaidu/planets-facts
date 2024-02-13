@@ -4,6 +4,7 @@ import '../style/Planet.css'
 
 const Planet = ({ planet }) => {
     const [selectedTab, setSelectedTab] = useState('overview')
+    
 
 
     const handleTabChange = (tab) => {
@@ -29,11 +30,11 @@ const Planet = ({ planet }) => {
                 <div className="planet-image">
                     {selectedTab === 'geology' ? (
                         <>
-                            <img className='planet-overview-image' src={planet.images.planet} alt={`Planet ${planet.name}`} />
+                            <img className={`planet-img-${planet.name}`} src={planet.images.planet} alt={`Planet ${planet.name}`} />
                             <img className='planet-geology-image' src={planet.images.geology} alt={`Planet ${planet.name}`} />
                         </>
                     ) : (
-                        <img src={getImageSource()} alt={`Planet ${planet.name}`} />
+                        <img className={`planet-img-${planet.name}`} src={getImageSource()} alt={`Planet ${planet.name}`} />
                     )}
                 </div>
                 <div className="planet-details">

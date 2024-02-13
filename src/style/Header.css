@@ -89,6 +89,11 @@ header {
     background: var(--neptune);
 }
 
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
 
 
 /* ----------------- TABLET ------------------ */
@@ -98,24 +103,103 @@ header {
     header {
         flex-direction: column;
         padding: 0;
-        
+
     }
 
-    .logo{
+    .logo {
         margin: 2rem 0 2.5rem 0;
     }
 
-    .planets-list{
+    .planets-list {
         width: 90%;
         justify-content: space-between;
     }
 
-    .planet-name-list{
+    .planet-name-list {
         padding-top: 0%;
     }
 
-    .planet-name-list::before{
+    .planet-name-list::before {
         top: auto;
         bottom: 0;
     }
+}
+
+
+/* ----------------- PHONE ------------------ */
+
+@media (max-width: 767px) {
+    body {
+        position: relative;
+    }
+
+    header {
+        max-height: 85px;
+        padding: 1rem 24px;
+    }
+
+
+    .hamburger-menu {
+        display: inline;
+        background-color: transparent;
+        border: 0;
+        color: white;
+
+    }
+
+    .hamburger-menu .material-symbols-outlined {
+        font-size: 2rem;
+    }
+
+    .planets-list {
+        position: absolute;
+        height: 100%;
+        flex-direction: column;
+        top: 85px;
+        left: 0;
+        right: 0;
+        padding: 0 28px;
+        gap: 0;
+        background: hsla(240, 67%, 8%, 1);
+        transform: translateX(-150%);
+        transition: 0.5s ease;
+        z-index: 1;
+    }
+
+    .menu-open {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    .planet-name-list {
+        display: flex;
+        align-items: center;
+        padding: 1.25rem 0;
+        border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+        opacity: 1;
+    }
+
+    .planet-name-list::before {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        left: auto;
+        margin-right: 1.5rem;
+        border-radius: 20px;
+        transform: none;
+        transition: none;
+    }
+
+    .planet-name-list:hover::before {
+        width: 20px;
+    }
+
+    .planet-name-list.active::before {
+        width: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
 }

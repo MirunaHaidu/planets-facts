@@ -127,6 +127,10 @@
 
 }
 
+.material-symbols-outlined{
+    font-size: 1rem;
+}
+
 .tab-buttons button:hover {
     background-color: hsla(0, 0%, 85%, 0.2);
 }
@@ -297,5 +301,46 @@
         margin: 2rem 0.5rem;
         padding: 2.3rem;
     }
+
+}
+
+
+
+/* ----------------- PHONE ------------------ */
+
+@media (max-width: 767px) {
+    
+    
+
+
+    .planet-image {
+        position: relative;
+    }
+
+    .planet-img-Mercury {
+        max-width: 111px;
+    }
+    .planet-img-Venus {
+        max-width: 154px;
+    }
+    .planet-img-Earth {
+        max-width: 173px;
+    }
+    .planet-img-Mars {
+        max-width: 129px;
+    }
+    .planet-img-Jupiter {
+        max-width: 224px;
+    }
+    .planet-img-Saturn {
+        max-width: 256px;
+    }
+    .planet-img-Uranus {
+        max-width: 176px;
+    }
+    .planet-img-Neptune {
+        max-width: 173px;
+    }
+
 
 }
