@@ -38,7 +38,6 @@ header {
     &:active {
         opacity: 1;
     }
-
 }
 
 .planet-name-list::before {
@@ -88,4 +87,35 @@ header {
 
 .planets-list li:nth-of-type(8)::before {
     background: var(--neptune);
+}
+
+
+
+/* ----------------- TABLET ------------------ */
+
+@media (min-width: 768px) and (max-width: 1120px) {
+
+    header {
+        flex-direction: column;
+        padding: 0;
+        
+    }
+
+    .logo{
+        margin: 2rem 0 2.5rem 0;
+    }
+
+    .planets-list{
+        width: 90%;
+        justify-content: space-between;
+    }
+
+    .planet-name-list{
+        padding-top: 0%;
+    }
+
+    .planet-name-list::before{
+        top: auto;
+        bottom: 0;
+    }
 }

@@ -5,6 +5,7 @@ import '../style/Planet.css'
 const Planet = ({ planet }) => {
     const [selectedTab, setSelectedTab] = useState('overview')
 
+
     const handleTabChange = (tab) => {
         setSelectedTab(tab)
     }
@@ -36,14 +37,17 @@ const Planet = ({ planet }) => {
                     )}
                 </div>
                 <div className="planet-details">
-                    <h2>{planet.name}</h2>
-                    <p>{planet[selectedTab].content}</p>
-                    <div className='source'>
-                        Source:
-                        <a href={planet[selectedTab].source} target="_blank" rel="noopener noreferrer">Wikipedia</a>
-                        <span className="material-symbols-outlined">
-                            open_in_new
-                        </span>
+                    <div className='planet-info'>
+                        <h2>{planet.name}</h2>
+                        <p>{planet[selectedTab].content}</p>
+                        <div className='source'>
+                            Source:
+                            <a href={planet[selectedTab].source} target="_blank" rel="noopener noreferrer">Wikipedia</a>
+                            <span className="material-symbols-outlined">
+                                open_in_new
+                            </span>
+                        </div>
+
                     </div>
 
                     <div className="tab-buttons">

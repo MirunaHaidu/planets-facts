@@ -5,10 +5,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 4rem 10rem;
     width: 90%;
-    margin: 0.5rem;
-    
+    margin: 4rem 0.5rem;
+
 }
 
 .planet-image {
@@ -19,8 +18,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
+
 
 .planet-geology-image {
     position: absolute;
@@ -42,16 +42,29 @@
 
 
 
+
 .planet-details {
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
     width: 50%;
-    opacity: 1;
-    
+
 }
 
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 2s ease forwards;
+}
 
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 
 .planet-details h2 {
     font-family: var(--ff-antonio);
@@ -66,7 +79,7 @@
     margin-top: 1rem;
     line-height: 1.5rem;
     min-height: 150px;
-    
+
 }
 
 .source {
@@ -133,8 +146,8 @@
     left: 90%;
     height: 1000%;
     transform: translate(-50%, -76%);
-    
-    
+
+
 }
 
 .tab-buttons button.active::before {
@@ -144,20 +157,20 @@
 }
 
 .tab-buttons button.active::after {
-    border-radius: 41%;
+    border-radius: 37%;
     background: hsla(240, 67%, 8%, 0.5);
     animation: animate 20s linear infinite;
 }
 
 @keyframes animate {
     from {
-      transform: translate(-50%, -76%) rotate(0deg);
+        transform: translate(-50%, -76%) rotate(0deg);
     }
-  
+
     to {
-      transform: translate(-50%, -76%) rotate(360deg);
+        transform: translate(-50%, -76%) rotate(360deg);
     }
-  }
+}
 
 .tab-buttons button.active.planet-mercury {
     background: var(--mercury);
@@ -190,11 +203,6 @@
 .tab-buttons button.active.planet-neptune {
     background: var(--neptune);
 }
-
-
-
-
-
 
 
 .planet-stats {
@@ -233,3 +241,61 @@
 }
 
 
+/*  -------------- TABLET --------------- */
+
+@media (max-width: 1120px) {
+
+    .planet-container {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin: 3rem;
+    }
+
+    .planet-image {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    .planet-details {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4rem;
+        margin-top: 10rem;
+    }
+
+    .planet-info {
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    .planet-info p {
+        min-height: 160px;
+    }
+
+    .tab-buttons {
+        width: 50%;
+        
+    }
+
+    .tab-buttons button.active::before,
+    .tab-buttons button.active::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        top: -80%;
+        left: 112%;
+        height: 850%;
+        transform: translate(-50%, -76%);
+    }
+
+    .planet-stats {
+        width: 100%;
+        margin: 2rem 0.5rem;
+        padding: 2.3rem;
+    }
+
+}
