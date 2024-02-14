@@ -39,7 +39,7 @@ const Planet = ({ planet }) => {
     }
 
     return (
-        <>
+        <div className='container'>
             <div className="planet-container">
                 {(screenWidth <= 767) && <TabButtons selectedTab={selectedTab} handleTabChange={handleTabChange} planet={planet} screenWidth={screenWidth}/>}
 
@@ -89,7 +89,7 @@ const Planet = ({ planet }) => {
                     <p className="stat-info">{planet.temperature}</p>
                 </div>
             </div>
-        </>
+        </div>
     )
 
 

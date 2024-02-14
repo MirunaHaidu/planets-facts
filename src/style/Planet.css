@@ -1,6 +1,7 @@
 @import url('../index.css');
 
 
+
 .planet-container {
     display: flex;
     align-items: center;
@@ -12,7 +13,6 @@
 
 .planet-image {
     width: 100%;
-    min-width: 700px;
     position: relative;
     display: flex;
     flex-direction: column;
