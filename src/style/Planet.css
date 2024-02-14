@@ -68,7 +68,7 @@
 
 .planet-details h2 {
     font-family: var(--ff-antonio);
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: 400;
     text-transform: uppercase;
 }
@@ -79,7 +79,6 @@
     margin-top: 1rem;
     line-height: 1.5rem;
     min-height: 150px;
-    font-size: 1.3rem;
 
 }
 
@@ -196,7 +195,7 @@
 
     .planet-image {
         width: 100%;
-        margin-top: 6rem;
+        margin-top: 5rem;
         position: relative;
     }
 
