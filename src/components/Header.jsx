@@ -7,8 +7,12 @@ const Header = ({ planets, selectedPlanet, handleClick }) => {
     const menuRef = useRef(null);
 
     const toggleMenu = () => {
-        console.log('clicked')
         setMenuOpen(!menuOpen)
+    }
+
+    const handlePlanetClick = (planet) => {
+        handleClick(planet)
+        setMenuOpen(false)
     }
 
 
@@ -18,12 +22,12 @@ const Header = ({ planets, selectedPlanet, handleClick }) => {
             <button className="hamburger-menu" onClick={toggleMenu}>
                 <span className="material-symbols-outlined">menu</span>
             </button>
-            <ul className={`planets-list ${menuOpen ? 'menu-open' : ''}`}>
+            <ul className={`planets-list ${menuOpen ? 'menu-open' : ''}`} ref={menuRef}>
                 {planets.map((planet) => (
                     <li
                         key={planet.name}
                         className={`planet-name-list ${selectedPlanet === planet ? 'active' : ''}`}
-                        onClick={() => handleClick(planet)}
+                        onClick={() => handlePlanetClick(planet)} // Call handlePlanetClick with the selected planet
                     >
                         {planet.name}
                     </li>
