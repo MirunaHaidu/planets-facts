@@ -1,4 +1,5 @@
 @import url('../index.css');
+@import url('./Planet.css');
 
 .tab-buttons {
     display: flex;
@@ -25,7 +26,7 @@
 
 }
 
-.material-symbols-outlined{
+.material-symbols-outlined {
     font-size: 1rem;
 }
 
@@ -106,3 +107,68 @@
     background: var(--neptune);
 }
 
+/*  -------------- TABLET --------------- */
+@media (max-width: 1120px) {
+    .tab-buttons {
+        width: 50%;
+
+    }
+
+    .tab-buttons button.active::before,
+    .tab-buttons button.active::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        top: -80%;
+        left: 112%;
+        height: 850%;
+        transform: translate(-50%, -76%);
+    }
+
+}
+
+
+/* ----------------- PHONE ------------------ */
+
+
+@media (max-width: 767px) {
+
+    main {
+        position: relative;
+        width: 100%;
+    }
+
+    .tab-buttons {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 0;
+       
+        border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+    }
+
+    .tab-buttons button {
+        background-color: transparent;
+        border: none;
+        position: relative;
+        padding: 1em 0.5em;
+        margin-left: 0.3em;
+
+        &::before,
+        &::after{
+            display: none;
+        }
+        /* &.active.planet-mercury,
+        &.active.planet-venus,
+        &.active.planet-earth,
+        &.active.planet-mars,
+        &.active.planet-jupiter,
+        &.active.planet-saturn,
+        &.active.planet-uranus,
+        &.active.planet-neptune{
+            background-color: transparent;
+        } */
+    }
+
+
+}

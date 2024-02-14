@@ -100,7 +100,6 @@
 }
 
 
-/* ----------- BUTTONS -------------- */
 
 
 .planet-stats {
@@ -174,22 +173,7 @@
         min-height: 160px;
     }
 
-    .tab-buttons {
-        width: 50%;
-        
-    }
-
-    .tab-buttons button.active::before,
-    .tab-buttons button.active::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        top: -80%;
-        left: 112%;
-        height: 850%;
-        transform: translate(-50%, -76%);
-    }
-
+    
     .planet-stats {
         width: 100%;
         margin: 2rem 0.5rem;
@@ -204,11 +188,16 @@
 
 @media (max-width: 767px) {
     
-    
+    .planet-container {
+        margin: 0;
+        width: 100%;
+    }
 
-
-
-    
+    .planet-image {
+        width: 100%;
+        margin-top: 6rem;
+        position: relative;
+    }
 
     .planet-img-Mercury {
         max-width: 111px;
@@ -235,5 +224,53 @@
         max-width: 173px;
     }
 
+
+
+    .planet-geology-image {
+        max-width: 80px;
+        position: absolute;
+        top: 100%;
+    }
+
+    .planet-details {
+        margin-top: 5rem;
+        padding: 0 24px;
+    }
+
+    .planet-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .planet-info h2 {
+        font-size: 2.5rem;
+    }
+    .planet-info p {
+        font-size: 0.9rem;
+    }
+
+    .source {
+        justify-content: center;
+        font-size: 0.7rem;
+    }
+
+
+    .planet-stats {
+        margin: 0;
+        margin-top: 2.5rem;
+        grid-template: repeat(4, 1fr) /1fr;
+        padding: 0 24px;
+    }
+
+    .stat {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.56rem 24px 0.81rem 24px;
+    }
+
+    .stat-info {
+        font-size: 1.3rem;
+    }
 
 }

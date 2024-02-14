@@ -1,11 +1,24 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import React from 'react';
 import '../style/Planet.css'
 import TabButtons from './TabButtons';
 
 const Planet = ({ planet }) => {
     const [selectedTab, setSelectedTab] = useState('overview')
-    
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenWidth(window.innerWidth)
+        }
+
+        window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
+
 
 
     const handleTabChange = (tab) => {
@@ -28,6 +41,8 @@ const Planet = ({ planet }) => {
     return (
         <>
             <div className="planet-container">
+                {(screenWidth <= 767) && <TabButtons selectedTab={selectedTab} handleTabChange={handleTabChange} planet={planet} screenWidth={screenWidth}/>}
+
                 <div className="planet-image">
                     {selectedTab === 'geology' ? (
                         <>
@@ -52,8 +67,8 @@ const Planet = ({ planet }) => {
 
                     </div>
 
-                    <TabButtons selectedTab={selectedTab} handleTabChange={handleTabChange} planet={planet} />
-        
+                    {(screenWidth > 767) && <TabButtons selectedTab={selectedTab} handleTabChange={handleTabChange} planet={planet} screenWidth={screenWidth}/>}
+
                 </div>
             </div>
             <div className="planet-stats">
